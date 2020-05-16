@@ -1,0 +1,18 @@
+<%# <div class= "note-data">
+  <%= @note.created_at %>
+<%# </div> %>
+
+<%# <div class= "note-text">
+  <%=safe_join(@note.text.split("\n"),tag(:br))%>
+<%# </div> %>
+
+<div class="note-fix">  
+  Edit and delete
+</div>
+<div class= "note-btn">
+  <%= link_to "Delete",note_path(@note.id),method: :delete, class: "note-btn__delete" %>
+</div>
+<%= form_with model: @note, class: :form, local: true do |form| %>
+  <%= form.text_area :text, placeholder: :作業内容, class: :form__text%>
+  <%= form.submit "Update", class: :form__btn %>
+<% end %>

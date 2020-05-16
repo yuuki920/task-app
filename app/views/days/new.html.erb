@@ -1,0 +1,27 @@
+<%= form_with(model: @day, local: true) do |f| %>
+  <div class="title-label">
+    <%= f.label :タイトル %>
+  </div>
+  <div class= "title-text">
+    <%= f.text_field :title, class:"title-text--area" %>
+  </div>
+
+  <div class= "time-label">
+    <%= f.label :日付・時間 %>
+  </div>
+  <div class= "time">
+    <%= f.datetime_select :start_time,{use_month_numbers: true}, {class: "time--box"} %>
+  </div>
+
+  <div class= "content-label">
+    <%= f.label :内容 %>
+  </div>
+  <div class= "content-text">
+    <%= f.text_area :content, class:"content-text--area" %>
+  </div>
+
+  <div class= "submit">
+    <%= f.submit :Save, class:"submit--btn" %>
+  </div>
+
+<% end %>

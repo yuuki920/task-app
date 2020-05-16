@@ -1,0 +1,10 @@
+<div class= "new_note">
+  <div class ="new_title">
+    New work
+  </div>
+</div>
+
+<%= form_with model: @note, class: :form, local: true do |form| %>
+  <%= form.text_area :text, placeholder: :作業内容, class: :form__text%>
+  <%= form.submit "Save", class: :form__btn %>
+<% end %>

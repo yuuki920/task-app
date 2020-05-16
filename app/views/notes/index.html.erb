@@ -1,0 +1,17 @@
+<div class= "main">
+  <div class="main-left">
+    <%= render "days/index" %>
+  </div>
+
+  <div class= "main-right" >
+    <% @notes.each do |note|%>
+      <div class= "main-right__content">
+        <%=link_to safe_join(note.text.split("\n"),tag(:br)),edit_note_path(note.id),class: "main-right__content--text" %>
+      </div>
+    <% end %>
+    <div class= "main-right__new">
+      <%= link_to "New work",new_note_path,class: "btn main-right__new--text"%>
+    </div> 
+  </div> 
+</div>
+
